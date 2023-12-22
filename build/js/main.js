@@ -7,6 +7,12 @@ const total_task = document.getElementById("total-id");
 const main_form = document.getElementById("main-form");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+if(localStorage.getItem('tasks')){
+    tasks.map((task) =>{
+        create_task(task)
+    })
+}
 // collect and submit user information
 todo_form.addEventListener("submit", function (e) {
   e.preventDefault();
