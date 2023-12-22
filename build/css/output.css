@@ -776,6 +776,10 @@ video {
   cursor: pointer;
 }
 
+.list-none {
+  list-style-type: none;
+}
+
 .flex-row {
   flex-direction: row;
 }

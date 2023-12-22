@@ -40,23 +40,21 @@ function create_task(task) {
   }
 
   const make_up = `
-  <ul class="w-full h-full flex justify-center">
-  <li class="todo-list flex justify-between  bg-white md:w-3/6 w-full h-24 rounded-md shadow-lg py-7 ">
-    <div class="ml-3 ">
-      <input type="checkbox" name="task" id="${task.id}" ${
-    task.is_completed ? "checked" : ""
-  } class=" w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"> 
-      <span ${
-        !task.is_completed ? "contenteditable" : ""
-      }  class="pl-3 text-xl font-semibold capitalize text-gray-300 rounded-md shadow-sm bg-sky-100 "  >${
-    task.name
-  }</span>
+  
+  <ul class="w-full h-full flex justify-center list-none">
+  <li class="todo-list flex justify-between bg-white md:w-3/6 w-full h-24 rounded-md shadow-lg py-7">
+    <div class="ml-3">
+      <input type="checkbox" name="task" id="${task.id}" ${task.is_completed ? "checked" : ""} 
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"> 
+      <span ${!task.is_completed ? "contenteditable" : ""} 
+        class="pl-3 text-xl font-semibold capitalize text-gray-300 rounded-md shadow-sm bg-sky-100">${task.name}</span>
     </div>
-    <button class=" w-4 h-4 py-2 mr-4  " title="remove ${
-      task.name
-    } task"  id="remove-task"> <img src="./images/icon-cross.svg" alt="" srcset=""></button>
+    <button class="w-4 h-4 py-2 mr-4" title="remove ${task.name} task" id="remove-task">
+      <img src="./images/icon-cross.svg" alt="" srcset="">
+    </button>
   </li>
 </ul>
+
 `;
 
   task_el.innerHTML = make_up;
